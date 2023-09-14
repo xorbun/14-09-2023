@@ -7,7 +7,7 @@ const createShedule=function()
         const numberCell=document.createElement("div");
             numberCell.classList.add("system");
             const numbervalue=document.createElement("h3");
-            numbervalue.innerText=Math.floor(Math.random()*100);
+            numbervalue.innerText=Math.floor(Math.random()*76);
             numberCell.appendChild(numbervalue);
             createShedule1.appendChild(numberCell);
             numberCell.addEventListener("click", function(e)
@@ -17,14 +17,26 @@ const createShedule=function()
                 
             })
     }
+    
+    
+   
     const deletes=document.createElement("div");
     deletes.innerHTML=`<button onclick="svuotatutto(event)">svuota scheda</button>`
     createShedule1.appendChild(deletes);
-   
-   
-    
+    const number=document.createElement("h3");
+    number.innerText=Math.floor(Math.random()*76);
+    createShedule1.appendChild(number);
+    console.log(number);
 
+    
+    number.innerText=Math.floor(Math.random()*76);
+    createShedule.appendChild(number);
 }
+
+
+
+
+
 const svuotatutto=function(e)
 {
     e.preventDefault();
