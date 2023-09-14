@@ -5,38 +5,36 @@ const createShedule=function()
     for(let i=0;i<20;i++)
     {
         const numberCell=document.createElement("div");
-            numberCell.classList.add("system");
-            const numbervalue=document.createElement("h3");
-            numbervalue.innerText=Math.floor(Math.random()*76);
-            numberCell.appendChild(numbervalue);
-            createShedule1.appendChild(numberCell);
-            numberCell.addEventListener("click", function(e)
-            {
-                e.preventDefault()
-                numberCell.classList.add("cellselected");
+        numberCell.classList.add("system");
+        const numbervalue=document.createElement("h3");
+        numbervalue.innerText=Math.floor(Math.random()*76);
+        numberCell.appendChild(numbervalue);
+        createShedule1.appendChild(numberCell);
+        numberCell.addEventListener("click", function(e)
+        {
+            e.preventDefault()
+            numberCell.classList.add("cellselected");
                 
-            })
+        })
     }
-    
-    
-   
     const deletes=document.createElement("div");
     deletes.innerHTML=`<button onclick="svuotatutto(event)">svuota scheda</button>`
     createShedule1.appendChild(deletes);
-    const number=document.createElement("h3");
+    const number=document.createElement("h4");
     number.innerText=Math.floor(Math.random()*76);
     createShedule1.appendChild(number);
-    console.log(number);
-
+    const prova=document.querySelectorAll("h3");
+    for(let i=0;i<prova.length;i++)
+    {
+        if(prova[i].innerText===number.innerText)
+        {
+            prova[i].parentElement.classList.add("cellselected");
+        }
+    }
     
-    number.innerText=Math.floor(Math.random()*76);
-    createShedule.appendChild(number);
+    
+    
 }
-
-
-
-
-
 const svuotatutto=function(e)
 {
     e.preventDefault();
